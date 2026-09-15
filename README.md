@@ -28,10 +28,8 @@ images/              Foto's (personen zijn geblurd)
    ze erbij.
 
 ## Foto's / privacy
-- Alle herkenbare personen op de foto's zijn geblurd (conform de vraag).
-- `images/activiteiten-5.jpg` (zwembad) is **bewust niet** op een pagina geplaatst:
-  de foto toont blootstellige minderjarigen. Advies: niet publiceren, ook niet geblurd.
-  De keuze ligt bij het bestuur — het bestand staat klaar in de map.
+- Alle herkenbare personen op de foto's zijn geblurd (conform de vraag), inclusief
+  `images/activiteiten-5.jpg` (zwembad), die inmiddels ook op `activiteiten.html` staat.
 
 ## Kleuren (in css/style.css → :root)
-Diep groen `#123B2E` · off-white `#F4F6F1` · brass-accent `#B0873C` · tekst `#17211C`.
+Brand-groen `#4A5B56` · brand-groen donker `#3A4844` · taupe-accent `#B2AFA0` (alleen op donkere vlakken of als rand/vulling) · warme off-white `#F4F2EC` · tekst `#242A27`.
