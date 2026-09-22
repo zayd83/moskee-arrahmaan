@@ -91,6 +91,7 @@ h1, h2, h3 {
 .btn--ghost:hover { border-color: var(--brand-green); }
 .btn--on-dark { background: transparent; color: #fff; border-color: rgba(255,255,255,.4); }
 .btn--on-dark:hover { border-color: #fff; }
+.btn--lg { padding: 1rem 2rem; font-size: 1.1rem; font-weight: 600; }
 
 /* ---------- Header ---------- */
 .site-header {
@@ -415,6 +416,25 @@ section { scroll-margin-top: 90px; }
 .footer-bottom {
   margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.12);
   font-size: .85rem; color: #8AA093;
+}
+
+/* ---------- Centered tekst (body.centered) ---------- */
+body.centered .prose,
+body.centered .page-hero__inner,
+body.centered .hero__inner,
+body.centered .support__grid > div,
+body.centered .contact-methods,
+body.centered .contact-method {
+  text-align: center;
+}
+body.centered .prose,
+body.centered .page-hero__inner,
+body.centered .hero__inner {
+  margin-inline: auto;
+}
+body.centered .hero__actions,
+body.centered .support__actions {
+  justify-content: center;
 }
 
 /* ---------- Responsive ---------- */
