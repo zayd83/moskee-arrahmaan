@@ -276,24 +276,10 @@ h1, h2, h3 {
 }
 .prayer__head h2 { font-size: 1.4rem; color: var(--brand-green); }
 .prayer__date { font-size: .9rem; color: var(--ink-soft); }
-.prayer__embed {
-  border: 1px dashed var(--line); border-radius: 10px; overflow: hidden; min-height: 160px;
-  display: grid; place-items: center; text-align: center; color: var(--ink-soft);
-  font-size: .95rem; padding: 1rem;
-}
-.prayer__times {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px;
-  background: var(--line); border: 1px solid var(--line); border-radius: 10px; overflow: hidden;
-}
-.prayer__times .slot { background: var(--sand-050); padding: 1rem; text-align: center; }
-.prayer__times .slot span {
-  display: block; font-size: .8rem; color: var(--ink-soft);
-  letter-spacing: .04em; margin-bottom: .35rem;
-}
-.prayer__times .slot strong {
-  font-family: var(--font-head); font-size: 1.35rem; font-weight: 500; color: var(--brand-green);
-}
-.prayer__note { margin: 1rem 0 0; font-size: .85rem; color: var(--ink-soft); }
+.prayer__embed-wrap { border-radius: 10px; overflow: hidden; }
+.prayer__embed-wrap iframe { border: 0; max-width: 100%; vertical-align: top; }
+.mawaqit-mobile { width: 100%; min-height: 480px; }
+.mawaqit-desktop { display: none; }
 
 /* ---------- Section helpers ---------- */
 section { scroll-margin-top: 90px; }
@@ -308,6 +294,7 @@ section { scroll-margin-top: 90px; }
 .prose p { color: var(--ink-soft); margin: 0 0 1.1rem; }
 .prose p.intro { color: var(--ink); font-size: 1.15rem; }
 .prose .btn { margin-top: 1rem; }
+.prose--spaced { margin-top: 3.5rem; }
 
 /* ---------- Over ons teaser (home) ---------- */
 .about h2 { font-size: clamp(1.8rem, 4vw, 2.4rem); color: var(--brand-green); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.01em; }
@@ -334,7 +321,8 @@ section { scroll-margin-top: 90px; }
 .support__grid { display: grid; gap: 1.5rem; }
 .support h2 { font-size: clamp(1.8rem, 4vw, 2.4rem); color: var(--brand-green); text-transform: uppercase; letter-spacing: 0.01em; }
 .support p { color: var(--ink-soft); max-width: 54ch; margin: 1rem 0 0; }
-.support__actions { display: flex; flex-wrap: wrap; gap: .85rem; margin-top: 1.75rem; }
+.support__actions { display: flex; flex-wrap: wrap; gap: .85rem; margin-top: 1.75rem; min-width: 0; }
+.support__actions .btn { flex: 1 1 12rem; justify-content: center; text-align: center; }
 
 /* ---------- Discover list (home) ---------- */
 .discover h2 { font-size: clamp(1.8rem, 4vw, 2.4rem); color: var(--brand-green); margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 0.01em; }
@@ -376,7 +364,61 @@ section { scroll-margin-top: 90px; }
 .tier ul { list-style: none; margin: 0 0 1.5rem; padding: 0; display: grid; gap: .6rem; }
 .tier li { color: var(--ink-soft); padding-left: 1.4rem; position: relative; }
 .tier li::before { content: ""; position: absolute; left: 0; top: .65em; width: .5rem; height: .5rem; border-radius: 50%; background: var(--brand-taupe); }
-.tier .btn { width: 100%; justify-content: center; }
+.tier .btn { width: 100%; justify-content: center; text-align: center; }
+.tier__note {
+  margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--line);
+  font-size: .9rem; color: var(--ink-soft);
+}
+.tier__note p { margin: 0 0 .75rem; }
+.tier__note a { color: var(--brand-green); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+/* ---------- SEPA-machtiging (steun) ---------- */
+#sepa-formulier { scroll-margin-top: 90px; border-top: 1px solid var(--line); }
+#sepa-formulier h2 { font-size: clamp(1.6rem, 3.5vw, 2.1rem); color: var(--brand-green); margin-bottom: 1rem; }
+.sepa-incassant,
+.sepa-intro { max-width: 640px; margin: 0 auto 1rem; color: var(--ink-soft); font-size: .95rem; }
+.sepa-incassant { color: var(--ink); }
+.sepa-form,
+.sepa-success { max-width: 640px; margin: 2rem auto 0; text-align: left; }
+.sepa-form {
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 1.75rem;
+}
+.sepa-form h3 { font-size: 1.15rem; color: var(--brand-green); margin: 0 0 1rem; }
+.sepa-form h3:not(:first-child) { margin-top: 2rem; }
+.sepa-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+.sepa-form label { display: block; font-size: .85rem; font-weight: 500; color: var(--ink-soft); }
+.sepa-form input[type="text"],
+.sepa-form input[type="email"],
+.sepa-form input[type="tel"] {
+  display: block; width: 100%; margin-top: .35rem; padding: .7rem .85rem;
+  font: inherit; font-size: 1rem; color: var(--ink);
+  background: var(--white); border: 1px solid var(--line); border-radius: 10px;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.sepa-form input:focus {
+  outline: none; border-color: var(--brand-green);
+  box-shadow: 0 0 0 3px rgba(74, 91, 86, .2);
+}
+.sepa-bedrag { margin: 1.75rem 0 1rem; padding: .9rem 1rem; background: var(--sand-050); border-radius: 10px; color: var(--ink); }
+.sepa-bedrag strong { color: var(--brand-green); }
+.sepa-form .sepa-check {
+  display: flex; align-items: flex-start; gap: .75rem;
+  font-size: .92rem; font-weight: 400; color: var(--ink); line-height: 1.5;
+}
+.sepa-check input { flex: none; width: 1.15rem; height: 1.15rem; margin-top: .2rem; accent-color: var(--brand-green); }
+.sepa-submit { width: 100%; justify-content: center; margin-top: 1.75rem; }
+.sepa-submit:disabled { opacity: .65; cursor: wait; }
+.sepa-error {
+  margin: 1rem 0 0; padding: .8rem 1rem; border-radius: 10px;
+  background: #FBEAEA; border: 1px solid #E8B4B4; color: #8A2C2C; font-size: .92rem;
+}
+.sepa-success {
+  background: var(--sand); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 1.75rem; text-align: center;
+}
+.sepa-success h3 { font-size: 1.25rem; color: var(--brand-green); margin-bottom: .75rem; }
+.sepa-success p { margin: 0; color: var(--ink-soft); }
+[hidden] { display: none !important; }
 
 /* ---------- Onderwijs lijst ---------- */
 .courses { display: grid; gap: 1.25rem; margin-top: 2rem; }
@@ -422,16 +464,34 @@ section { scroll-margin-top: 90px; }
 body.centered .prose,
 body.centered .page-hero__inner,
 body.centered .hero__inner,
-body.centered .support__grid > div,
+body.centered .support,
+body.centered .prayer__head,
+body.centered .discover h2,
+body.centered .section-pad > .wrap > h2,
+body.centered .section-pad > .wrap > .kicker,
+body.centered .section-pad > .wrap > p,
+body.centered .whatsapp-cta,
 body.centered .contact-methods,
 body.centered .contact-method {
   text-align: center;
 }
+/* Tekstkolommen met max-width in het midden zetten */
 body.centered .prose,
 body.centered .page-hero__inner,
-body.centered .hero__inner {
+body.centered .hero__inner,
+body.centered .page-hero p,
+body.centered .support p,
+body.centered .whatsapp-cta p {
   margin-inline: auto;
 }
+/* Gebedstijden: titel en subtitel onder elkaar, gecentreerd */
+body.centered .prayer__head { flex-direction: column; align-items: center; }
+/* Steun-band: tekst en knoppen gestapeld en gecentreerd, ook op desktop */
+body.centered .support__grid { grid-template-columns: 1fr; justify-items: center; }
+body.centered .support__actions { width: 100%; max-width: 30rem; }
+/* WhatsApp/vragen-blok: tekst boven, knop eronder */
+body.centered .whatsapp-cta { grid-template-columns: 1fr; justify-items: center; }
+body.centered .whatsapp-cta p { margin-top: .6rem; }
 body.centered .hero__actions,
 body.centered .support__actions {
   justify-content: center;
@@ -442,9 +502,12 @@ body.centered .support__actions {
   .gallery { grid-template-columns: repeat(2, 1fr); }
   .tiers { grid-template-columns: repeat(2, 1fr); }
   .whatsapp-cta { grid-template-columns: 1.5fr auto; align-items: center; }
+  .sepa-grid { grid-template-columns: 1fr 1fr; }
+  .sepa-full { grid-column: 1 / -1; }
 }
 @media (min-width: 720px) {
-  .prayer__times { grid-template-columns: repeat(3, 1fr); }
+  .mawaqit-desktop { display: block; width: 100%; min-height: 460px; }
+  .mawaqit-mobile { display: none; }
   .support__grid { grid-template-columns: 1.4fr 1fr; align-items: center; }
   .footer-grid { grid-template-columns: 1.6fr 1fr 1fr; }
   .contact-grid { grid-template-columns: 1fr 1fr; align-items: start; }
@@ -456,9 +519,9 @@ body.centered .support__actions {
   .section-pad { padding: 5rem 0; }
   .hero__inner { padding: 6rem 0 5rem; }
   .page-hero__inner { padding: 4.5rem 0; }
-  .prayer__times { grid-template-columns: repeat(6, 1fr); }
   .gallery { grid-template-columns: repeat(3, 1fr); }
   .courses { grid-template-columns: repeat(2, 1fr); }
+  .tiers { grid-template-columns: repeat(3, 1fr); }
 }
 @media (prefers-reduced-motion: reduce) {
   * { scroll-behavior: auto; transition: none !important; animation: none !important; }

@@ -65,36 +65,99 @@
           <p class="intro">Naast de kosten voor activiteiten hebben we te maken met vaste lasten zoals nutsvoorzieningen, onderhoud en personeelskosten. Met jouw bijdrage kunnen we deze kosten dragen en blijven investeren in onze gemeenschap.</p>
         </div>
 
-        <h2 style="font-family:var(--font-head);color:var(--brand-green);font-size:1.6rem;margin:2.5rem 0 0;">Jaarlijkse contributie</h2>
-        <p style="color:var(--ink-soft);margin:.5rem 0 0;">Vanaf 2027 bedraagt de contributie €180 per jaar. Je kunt deze op verschillende manieren voldoen.</p>
+        <div class="prose prose--spaced">
+          <h2>Eenmalig doneren</h2>
+          <p>Wil je de moskee ondersteunen met een vrije gift? Dat kan. Met een eenmalige donatie draag je bij aan bijvoorbeeld activiteiten, onderwijs en andere initiatieven binnen onze gemeenschap. Iedere bijdrage, groot of klein, is waardevol.</p>
+          <a href="https://betaalverzoek.rabobank.nl/betaalverzoek/?id=8hzgWOmmRCmpJIv93g3fmw" class="btn btn--primary" target="_blank" rel="noopener">Nu doneren</a>
+        </div>
+
+        <div class="prose prose--spaced">
+          <h2>Jaarlijkse contributie</h2>
+          <p>Vanaf 2027 bedraagt de contributie voor volwassenen €180 per jaar en voor jongeren (tot 23 jaar) €80 per jaar. Je kunt de contributie op verschillende manieren voldoen.</p>
+        </div>
 
         <div class="tiers">
           <div class="tier">
-            <h3>Eenmalig betalen</h3>
+            <h3>Volwassenen — eenmalig</h3>
             <p class="amount">€180 <small>per jaar</small></p>
             <ul>
               <li>Contant in de moskee</li>
               <li>Via de betaallink</li>
             </ul>
-            <a href="#" class="btn btn--ghost">Betaal via de link</a>
+            <a href="https://betaalverzoek.rabobank.nl/betaalverzoek/?id=8hzgWOmmRCmpJIv93g3fmw" class="btn btn--ghost" target="_blank" rel="noopener">Betaal €180</a>
           </div>
           <div class="tier tier--accent">
-            <h3>Automatische incasso</h3>
+            <h3>Volwassenen — automatische incasso</h3>
             <p class="amount">€15 <small>per maand</small></p>
             <ul>
               <li>Automatisch afgeschreven</li>
               <li>Verspreid over het jaar</li>
-              <li>Eenvoudig te regelen</li>
             </ul>
-            <a href="#" class="btn btn--primary">Automatische incasso regelen</a>
+            <a href="#sepa-formulier" class="btn btn--primary">Automatische incasso regelen</a>
+            <div class="tier__note">
+              <p>Heb je de SEPA-machtiging na 25 januari 2027 ingevuld? Dan kunnen de gemiste maanden niet meer automatisch worden geïncasseerd. Wij vragen je deze maanden daarom eenmalig over te maken via de link hieronder.</p>
+              <p>Voorbeeld: heb je de machtiging op 1 mei 2027 ingevuld? Dan zijn januari t/m april 2027 niet geïncasseerd. Wij vragen je daarom €60 (€15 × 4 maanden) eenmalig over te maken via de donatielink hieronder.</p>
+              <a href="https://betaalverzoek.rabobank.nl/betaalverzoek/?id=8hzgWOmmRCmpJIv93g3fmw" target="_blank" rel="noopener">Inhaalbetaling jaarcontributie 2027</a>
+            </div>
+          </div>
+          <div class="tier">
+            <h3>Jongeren tot 23 jaar</h3>
+            <p class="amount">€80 <small>per jaar</small></p>
+            <ul>
+              <li>Contant in de moskee</li>
+              <li>Via de betaallink</li>
+            </ul>
+            <a href="https://betaalverzoek.rabobank.nl/betaalverzoek/?id=8hzgWOmmRCmpJIv93g3fmw" class="btn btn--ghost" target="_blank" rel="noopener">Betaal €80</a>
+            <div class="tier__note">
+              <p>Via de betaallink kan je het bedrag in één keer betalen of zelf in meerdere termijnen voldoen. Bij betaling in termijnen kan je zelf een herinnering (in je agenda) instellen.</p>
+            </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="prose" style="margin-top:3.5rem;">
-          <h2>Eenmalig doneren</h2>
-          <p>Wil je de moskee (daarnaast) ondersteunen met een vrije gift? Dat kan. Met een eenmalige donatie draag je bij aan bijvoorbeeld activiteiten, onderwijs en andere initiatieven binnen onze gemeenschap.</p>
-          <p>Iedere bijdrage, groot of klein, is waardevol.</p>
-          <a href="#" class="btn btn--primary">Nu doneren</a>
+    <section id="sepa-formulier" class="section-pad">
+      <div class="wrap">
+        <h2>SEPA-machtiging automatische incasso</h2>
+        <p class="sepa-incassant">
+          Incassant: Moskee Arrahmaan Dordrecht — Kasperspad 81, 3311 ZE Dordrecht — Nederland.<br>
+          Incassant ID: NL16ZZZ403239790000
+        </p>
+        <p class="sepa-intro">Door dit formulier in te vullen, machtigt u Moskee Arrahmaan Dordrecht om maandelijks €15 aan contributie automatisch van uw rekening af te schrijven. Uw gegevens worden uitsluitend gebruikt voor de contributie-administratie.</p>
+
+        <form id="sepa-form" class="sepa-form" novalidate>
+          <h3>Persoonsgegevens</h3>
+          <div class="sepa-grid">
+            <label>Voornaam<input name="voornaam" type="text" autocomplete="given-name" required></label>
+            <label>Achternaam<input name="achternaam" type="text" autocomplete="family-name" required></label>
+            <label class="sepa-full">Straat + huisnummer<input name="straat" type="text" autocomplete="street-address" required></label>
+            <label>Postcode<input name="postcode" type="text" autocomplete="postal-code" required></label>
+            <label>Woonplaats<input name="woonplaats" type="text" autocomplete="address-level2" required></label>
+            <label>E-mailadres<input name="email" type="email" autocomplete="email" required></label>
+            <label>Telefoonnummer<input name="telefoon" type="tel" autocomplete="tel" required></label>
+          </div>
+
+          <h3>Bankgegevens</h3>
+          <div class="sepa-grid">
+            <label>Naam rekeninghouder<input name="rekeninghouder" type="text" required></label>
+            <label>IBAN<input name="iban" type="text" inputmode="text" placeholder="NL00 BANK 0000 0000 00" pattern="[A-Za-z]{2}[0-9]{2}[A-Za-z0-9 ]{10,30}" required></label>
+          </div>
+
+          <input type="hidden" name="bedrag" value="15">
+          <p class="sepa-bedrag">Maandelijkse contributie: <strong>€15 per maand</strong></p>
+
+          <label class="sepa-check">
+            <input type="checkbox" name="toestemming" required>
+            <span>Ik geef toestemming voor automatisch maandelijks incasso van €15 door Moskee Arrahmaan Dordrecht en bevestig dat ik deze machtiging vrijwillig en correct heb ingevuld.</span>
+          </label>
+
+          <button type="submit" class="btn btn--primary btn--lg sepa-submit">Versturen</button>
+          <p class="sepa-error" hidden></p>
+        </form>
+
+        <div class="sepa-success" hidden>
+          <h3>Bedankt! Uw machtiging is succesvol verzonden.</h3>
+          <p>U ontvangt binnen enkele minuten een bevestigingsmail op het door u opgegeven e-mailadres. Onze administratie verwerkt uw machtiging zo spoedig mogelijk en de eerste incasso vindt plaats op de eerstvolgende 27e van de maand. Moge Allah u belonen voor uw steun aan de moskee.</p>
         </div>
       </div>
     </section>
@@ -141,5 +204,36 @@
     </div>
   </footer>
   <script src="js/main.js"></script>
+  <script>
+  (function () {
+    var ENDPOINT = "https://script.google.com/macros/s/AKfycbwK3w2sDqzbuMCVtG1Wep4C2G7CWIlGq5vqliCOeU_VZ-4PgyS6gElN36IE3Hip9wxABQ/exec";
+    var form = document.getElementById("sepa-form");
+    if (!form) return;
+    var errEl = form.querySelector(".sepa-error");
+    var btn = form.querySelector(".sepa-submit");
+    var success = document.querySelector(".sepa-success");
+    form.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      errEl.hidden = true;
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      btn.disabled = true; btn.textContent = "Versturen…";
+      var body = new URLSearchParams(new FormData(form)).toString();
+      fetch(ENDPOINT, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+        body: body
+      }).then(function () {
+        form.hidden = true;
+        if (success) success.hidden = false;
+        success && success.scrollIntoView({ behavior: "smooth", block: "center" });
+      }).catch(function () {
+        btn.disabled = false; btn.textContent = "Versturen";
+        errEl.textContent = "Er ging iets mis bij het verzenden. Probeer het opnieuw of mail ons via moskeedordrecht@gmail.com.";
+        errEl.hidden = false;
+      });
+    });
+  })();
+  </script>
 </body>
 </html>
