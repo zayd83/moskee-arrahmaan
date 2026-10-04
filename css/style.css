@@ -296,6 +296,13 @@ section { scroll-margin-top: 90px; }
 .prose .btn { margin-top: 1rem; }
 .prose--spaced { margin-top: 3.5rem; }
 
+/* ---------- Ingekaderde foto (onderwijs) ---------- */
+.feature-image figure { margin: 0 auto; max-width: 960px; }
+.feature-image img { width: 100%; height: auto; display: block; border-radius: var(--radius); box-shadow: var(--shadow); }
+.feature-image figcaption { margin-top: .9rem; text-align: center; color: var(--ink-soft); font-size: .95rem; }
+/* Geen dubbele sectie-padding tussen foto en de sectie eronder */
+.feature-image + .section-pad { padding-top: 0; }
+
 /* ---------- Over ons teaser (home) ---------- */
 .about h2 { font-size: clamp(1.8rem, 4vw, 2.4rem); color: var(--brand-green); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.01em; }
 .about p { color: var(--ink-soft); }
